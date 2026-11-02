@@ -20,7 +20,7 @@ To prevent duplication and configuration drift across different AI agent framewo
 
 ## OpenAI Codex entry point
 
-For Codex, use the repo-local skill at `.agents/skills/job-search/SKILL.md` and the setup guide at `CODEX.md`. Invoke the workflow as `$job-search setup`, `$job-search scrape South Africa`, or `$job-search apply <posting-url>`. The workflow specs in `.claude/` are shared canonical specifications, **not** a requirement to run Claude Code.
+For Codex, use the repo-local skill at `.agents/skills/job-workflow/SKILL.md` and the setup guide at `CODEX.md`. Invoke the workflow as `$job-workflow setup`, `$job-workflow scrape South Africa`, or `$job-workflow apply <posting-url>`. The workflow specs in `.claude/` are shared canonical specifications, **not** a requirement to run Claude Code.
 
 Codex does not automatically honor Claude-specific slash commands, frontmatter `allowed-tools`, named agents, or MCP connectors. The Codex adapter translates these only where equivalent capabilities are actually available. Do not claim independent agent review, fetched evidence, compiled PDFs, or verified checks unless they occurred.
 
