@@ -6,21 +6,21 @@ This fork supports **OpenAI Codex** as an agent entry point. Claude Code is **no
 
 Clone `https://github.com/tdollar15/ai-job-search` locally, open its root folder in Codex Desktop / IDE, or run `codex` from the repository root in a terminal.
 
-Codex reads `AGENTS.md` for project instructions and discovers the `job-search` skill under `.agents/skills/job-search/SKILL.md`. Mention it using `$job-search` in a prompt (or choose it from the skills selector). If it does not appear, restart Codex after updating the checkout.
+Codex reads `AGENTS.md` for project instructions and discovers the `job-search` skill under `.agents/skills/job-workflow/SKILL.md`. Mention it using `$job-workflow` in a prompt (or choose it from the skills selector). If it does not appear, restart Codex after updating the checkout.
 
 ## 2. Start with these requests
 
 | What you want | Prompt in Codex |
 |---|---|
-| Build a candidate profile | `$job-search setup` |
-| Find roles matching your profile | `$job-search scrape South Africa` |
-| Rank the latest results | `$job-search rank` |
-| Evaluate a posting and tailor application drafts | `$job-search apply <job-posting-url>` |
-| Prepare for an interview | `$job-search interview` |
-| Record an outcome or follow-up | `$job-search outcome` |
-| Identify competency gaps | `$job-search upskill` |
-| Create an offline tracker dashboard | `$job-search html-report` |
-| Add a job-board integration for your market | `$job-search add-portal <job-board-url>` |
+| Build a candidate profile | `$job-workflow setup` |
+| Find roles matching your profile | `$job-workflow scrape South Africa` |
+| Rank the latest results | `$job-workflow rank` |
+| Evaluate a posting and tailor application drafts | `$job-workflow apply <job-posting-url>` |
+| Prepare for an interview | `$job-workflow interview` |
+| Record an outcome or follow-up | `$job-workflow outcome` |
+| Identify competency gaps | `$job-workflow upskill` |
+| Create an offline tracker dashboard | `$job-workflow html-report` |
+| Add a job-board integration for your market | `$job-workflow add-portal <job-board-url>` |
 
 Other supported actions: `expand`, `gmail-sync`, `notion-sync`, `add-template`, and `reset`.
 
@@ -53,14 +53,14 @@ Use a **private, non-fork repository** for personal job-search data, or keep a l
 The repository ships LinkedIn and Freehire integrations that can search across markets. Its four Denmark-specific portal integrations are disabled by default. To add South African boards, use:
 
 ```text
-$job-search add-portal <South-African-job-board-URL>
+$job-workflow add-portal <South-African-job-board-URL>
 ```
 
 Review a new portal's terms, `robots.txt`, and generated CLI before using it. Do not assume bulk automated access to LinkedIn or any third-party board is permitted. The adapter does not install South African portal integrations automatically.
 
 ## 6. Important limitations
 
-- Codex does **not** execute Claude slash commands, read Claude-only `allowed-tools` grants, or automatically provide Claude's named agents. The `$job-search` skill maps those steps to capabilities actually available in Codex.
+- Codex does **not** execute Claude slash commands, read Claude-only `allowed-tools` grants, or automatically provide Claude's named agents. The `$job-workflow` skill maps those steps to capabilities actually available in Codex.
 - A distinct reviewer/fetcher agent is used only when the active Codex session supports delegation; otherwise review is a single-agent check and is labelled accordingly.
 - Gmail and Notion require the corresponding connector configured **in Codex**. They are not included by installing this repository.
 - The application flow drafts documents and tracks outcomes. It does **not** silently submit applications.
@@ -69,7 +69,7 @@ Review a new portal's terms, `robots.txt`, and generated CLI before using it. Do
 ## 7. Canonical sources
 
 - `AGENTS.md` — project-wide agent instructions
-- `.agents/skills/job-search/SKILL.md` — Codex orchestration adapter
+- `.agents/skills/job-workflow/SKILL.md` — Codex orchestration adapter
 - `.claude/commands/` and `.claude/skills/` — established workflow specifications
 - `.agents/skills/*-search/` — portal search CLIs
 - `CLAUDE.md` — historical name for candidate profile (not a requirement to use Claude Code)
